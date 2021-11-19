@@ -1,0 +1,32 @@
+spring:
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          #表明gateway开启服务注册和发现的功能，并且spring cloud gateway自动根据服务发现为每一个服务创建了一个router，# 这个router将以服务名开头的请求路径转发到对应的服务
+          enabled: true
+          #将请求路径上的服务名配置为小写（因为服务注册的时候，向注册中心注册时将服务名转成大写的了,比如以/service-hi/*的请求路径被路由转发到服务名为service-hi的服务上
+          lowerCaseServiceId: true
+    nacos:
+      discovery:
+        #注册中心地址
+        server-addr: 127.0.0.1:8848
+        group: JRZX-CXC
+        namespace: 9ff9bd45-60f1-4060-8271-edd1fcf3e0dc
+      config:
+        #配置中心地址
+        server-addr: 127.0.0.1:8848
+        file-extension: yml
+        group: JRZX-CXC
+        namespace: 9ff9bd45-60f1-4060-8271-edd1fcf3e0dc
+        shared-configs[0]:
+          data-id: application.${spring.cloud.nacos.config.file-extension}
+          refresh: true
+        extension-configs[0]:
+          data-id: ${spring.application.name}-${spring.profiles.active}.${spring.cloud.nacos.config.file-extension}
+          refresh: true
+  sleuth:
+    sampler:
+      probability: 1.0
+  zipkin:
+    base-url: http://127.0.0.1:9411/

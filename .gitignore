@@ -1,0 +1,3 @@
+# Project exclude paths
+/cxc-biz/target/
+/cxc-gateway/target/

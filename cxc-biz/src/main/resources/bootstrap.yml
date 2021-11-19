@@ -1,0 +1,13 @@
+server:
+  port: 8080
+  tomcat:
+    uri-encoding: UTF-8
+spring:
+  profiles:
+    # 环境配置
+    active: @profile.active@
+  application:
+    name: cxc-biz
+  main:
+    allow-bean-definition-overriding: true
+

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="cxc-gateway" />
+        <module name="cxc-biz" />
+        <module name="cxc-common" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="cxc-modules" target="1.8" />
+      <module name="cxc-upms" target="1.8" />
+      <module name="cxc-upms-api" target="1.8" />
+      <module name="demo" target="1.8" />
+      <module name="platform-upms" target="1.8" />
+      <module name="platform-upms-api" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="cxc-biz" options="" />
+      <module name="cxc-common" options="" />
+      <module name="cxc-gateway" options="" />
+      <module name="cxc-upms" options="-parameters" />
+      <module name="cxc-upms-api" options="-parameters" />
+      <module name="demo" options="-parameters" />
+      <module name="platform-cxc" options="" />
+      <module name="platform-upms" options="-parameters" />
+      <module name="platform-upms-api" options="-parameters" />
+    </option>
+  </component>
+</project>
